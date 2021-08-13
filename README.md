@@ -1,3 +1,4 @@
+
 # instafeed-with-swiperjs-lazy
  A simple Instagram Javascript with Lazyloadeed plugin for your website 
 
@@ -13,5 +14,6 @@ A Facebook developer account, and an Instagram account with some media posted to
 A Facebook app linked to your Instagram account, and a token generated through that app.
 A service to keep your access token fresh
 
+![sample](https://user-images.githubusercontent.com/88774061/129370870-3a8dbfd9-0602-4b52-b0a7-97215ff1af43.jpg)
 
 You can modify swiper.js options just visit www.swiperjs.com good luck!
