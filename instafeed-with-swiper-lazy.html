@@ -1,0 +1,90 @@
+<!--SO U JUST NEED TO CHANGE INSTAGRAM USER ID AND AFTER U CAN USE THIS PLUGIN ON YOUR WEBSITE-->
+<!--ITS ALREADY LAZY LOADING AND PERFORMANCE OPTIMIZATED-->
+
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
+</head>
+<style>
+    #insta-feed .swiper-container {
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+    #insta-feed .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+    }
+
+    #insta-feed a img {
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+    }
+</style>
+<body> 
+
+              <div class="swiper-container  mySwiper">
+                <div class="swiper-wrapper" id="insta-feed">
+
+                </div>
+              </div>
+  </div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+<script src="instafeed.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    $(document).ready(function () {
+        var userFeed = new Instafeed({
+        get: "user",
+        userId: "YOUR-USER-ID",
+        target: id = "insta-feed",
+        resolution: "low_resolution",
+        template: '<div class="swiper-slide"><a href="{{link}}" target="_blank" id="{{id}}"><img width="1080"  height="1080" class="swiper-lazy" data-src="{{image}}" /></a> <div class="swiper-lazy-preloader"> </div>  </div>',
+        limit: 10,
+        sortBy: "most-recent",
+        accessToken: "YOUR-ACCESS-KEY",
+        after: function () {
+            new Swiper('.mySwiper', {
+                spaceBetween: 100,
+                centeredSlides: false,
+                slidesPerView: "auto",
+                autoplay: 3000,
+                preloadImages: 1,
+                loop: false,
+                lazy: true,
+                updateOnImagesReady: false,
+                lazyLoadingInPrevNextAmount: 1,
+                watchSlidesVisibility: true,
+                effect: "coverflow",
+                coverflowEffect: {
+                    rotate: 10,
+                    depth: 350,
+                    slideShadows: true
+                },
+                keyboard: {
+                    enabled: true
+                },
+                pagination: {
+                    el: ".swiper-pagination"
+                }
+            });
+        }
+
+    });
+
+
+    setTimeout(function () { userFeed.run(); }, 3000);
+    });
+
+
+
+
+    </script>
+
+
+</body>
+</html>
